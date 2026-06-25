@@ -1,5 +1,5 @@
-while not game:IsLoaded() do
-    task.wait()
+if not game:IsLoaded() then 
+    game.Loaded:Wait()
 end
 
 local function LoadScript()
