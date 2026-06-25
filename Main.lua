@@ -1,3 +1,7 @@
+while not game:IsLoaded() do
+    task.wait()
+end
+
 local function LoadScript()
     local rs = cloneref(game:GetService("ReplicatedStorage"))
     local players = cloneref(game:GetService("Players"))
