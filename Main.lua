@@ -1,4 +1,4 @@
-if not game:IsLoaded() then 
+if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
@@ -62,7 +62,12 @@ local function LoadScript()
     lplr.OnTeleport:Connect(function(State)
         if not TeleportCheck and queue_on_teleport then
             TeleportCheck = true
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Tio30533/Arctic/refs/heads/main/Main.lua'))()")
+            queue_on_teleport([[
+                if not game:IsLoaded() then
+                    game.Loaded:Wait()
+                end
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/Tio30533/Arctic/refs/heads/main/Main.lua'))()
+            ]])
         end
     end)
 
